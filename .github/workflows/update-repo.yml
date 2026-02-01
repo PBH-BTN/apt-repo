@@ -27,10 +27,12 @@ jobs:
       - name: Fetch Packages
         run: |
           mkdir -p downloaded_packages
+          chmod + ./scripts/fetch-packages.sh
           ./scripts/fetch-packages.sh
 
       - name: Build Repo
         run: |
+          chmod +x ./scripts/setup-reprepro.sh
           ./scripts/setup-reprepro.sh
 
       # - name: Upload APT Repo to Aliyun OSS
