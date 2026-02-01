@@ -27,7 +27,7 @@ jobs:
       - name: Fetch Packages
         run: |
           mkdir -p downloaded_packages
-          chmod + ./scripts/fetch-packages.sh
+          chmod +x ./scripts/fetch-packages.sh
           ./scripts/fetch-packages.sh
 
       - name: Build Repo
