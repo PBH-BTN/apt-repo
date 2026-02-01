@@ -5,6 +5,8 @@ on:
   push:
     paths:
       - "packages.list"
+  schedule:
+    - cron: "0 */12 * * *"  # Every 12 hours
 
 jobs:
   build-repo:

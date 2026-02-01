@@ -20,7 +20,7 @@ Label: apt-repo
 Description: Self APT Repository
 Codename: $Codename
 Suite: $Suite
-Architectures: amd64
+Architectures: amd64 arm64 riscv64
 Components: main
 SignWith: yes
 EOF
