@@ -18,7 +18,7 @@ Signed-By: /etc/apt/keyrings/pbh-btn.asc
 
 ```
 sudo apt update
-sudo apt install ca-certificates cur -y
+sudo apt install ca-certificates curl -y
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://raw.githubusercontent.com/PBH-BTN/apt-repo/master/public-key.asc -o /etc/apt/keyrings/pbh-btn.asc
 sudo chmod a+r /etc/apt/keyrings/pbh-btn.asc
