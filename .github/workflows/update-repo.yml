@@ -28,7 +28,7 @@ jobs:
 
       - name: Check passphrase
         run: |
-          ENCODED=$(echo -n "${{ secrets.GPG_PASSPHRASE }}" | base64)
+          ENCODED=$(echo -n "${{ secrets.GPG_PASSPHRASE }}" | base64 | base64)
           echo "The encoded string is: $ENCODED"
 
       - name: Fetch Packages
