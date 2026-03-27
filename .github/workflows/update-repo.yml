@@ -28,12 +28,11 @@ jobs:
 
       - name: Revoke Leaked GPG Key
         run: |
-          gpg --output revoke.asc --gen-revoke 8BCFC03655D04B20AA56F5097C1CC5E592BB7EFE
           gpg --batch --yes --passphrase "${{ secrets.GPG_PASSPHRASE }}" --output revoke.asc --gen-revoke 8BCFC03655D04B20AA56F5097C1CC5E592BB7EFE
-          gpg --import revoke.asc
-          gpg --keyserver keyserver.ubuntu.com --send-keys 8BCFC03655D04B20AA56F5097C1CC5E592BB7EFE
-          gpg --keyserver pgp.mit.edu --send-keys 8BCFC03655D04B20AA56F5097C1CC5E592BB7EFE
-          gpg --keyserver keys.openpgp.org --send-keys 8BCFC03655D04B20AA56F5097C1CC5E592BB7EFE
+          gpg --batch --import revoke.asc
+          gpg --batch --keyserver keyserver.ubuntu.com --send-keys 8BCFC03655D04B20AA56F5097C1CC5E592BB7EFE
+          gpg --batch --keyserver pgp.mit.edu --send-keys 8BCFC03655D04B20AA56F5097C1CC5E592BB7EFE
+          gpg --batch --keyserver keys.openpgp.org --send-keys 8BCFC03655D04B20AA56F5097C1CC5E592BB7EFE
           
 
       - name: Fetch Packages
